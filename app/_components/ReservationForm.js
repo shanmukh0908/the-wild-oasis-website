@@ -1,7 +1,7 @@
 "use client";
 
 import { differenceInDays } from "date-fns";
-import { usereservation } from "./context";
+import { useReservation } from "./context";
 import { createbookingaction } from "../_lib/actions";
 import { useFormStatus } from "react-dom";
 
@@ -9,7 +9,7 @@ function ReservationForm({ cabin, user }) {
   // CHANGE
   // console.log(cabin);
   const { maxCapacity, id, regularPrice, discount } = cabin;
-  const { range, setrange } = usereservation();
+  const { range, setrange } = useReservation();
   const numNights = differenceInDays(range.to, range.from);
   const cabinPrice = (regularPrice - discount) * numNights;
   const bookingdata = {

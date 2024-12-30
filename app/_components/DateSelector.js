@@ -8,7 +8,7 @@ import {
 import { useState } from "react";
 import { DayPicker, getDefaultClassNames } from "react-day-picker";
 import "react-day-picker/dist/style.css";
-import { usereservation } from "./context";
+import { useReservation } from "./context";
 
 function isAlreadyBooked(range, datesArr) {
   return (
@@ -22,7 +22,7 @@ function isAlreadyBooked(range, datesArr) {
 
 function DateSelector({ cabin, settings, bookeddates }) {
   const defaultClassNames = getDefaultClassNames();
-  const { range, setrange, resetRange } = usereservation();
+  const { range, setrange, resetRange } = useReservation();
   const displayrange = isAlreadyBooked(range, bookeddates) ? {} : range;
 
   // CHANGE

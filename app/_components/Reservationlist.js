@@ -3,7 +3,7 @@ import { useOptimistic } from "react";
 import ReservationCard from "./ReservationCard";
 import { deleteresrvationaction } from "../_lib/actions";
 
-export default async function Reservationlist({ bookings }) {
+export default function Reservationlist({ bookings }) {
   const [optimisticbookings, optimisticdeletion] = useOptimistic(
     bookings,
     (currentbookings, bookingId) => {

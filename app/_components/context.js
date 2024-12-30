@@ -13,11 +13,11 @@ function Reservationprovider({ children }) {
     </Reservationcontext.Provider>
   );
 }
-function usereservation() {
+function useReservation() {
   const context = useContext(Reservationcontext);
   if (context === undefined)
     throw new Error("context used outside of the provider");
   return context;
 }
 
-export { Reservationprovider, usereservation };
+export { Reservationprovider, useReservation };
